@@ -1,0 +1,89 @@
+:root {
+background-color: #8a2be2;
+}
+
+*{
+box-sizing: border-box;
+margin:0;
+padding:0;
+font: size 80px;
+font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+font: size 3.5em;
+color: #e3d7d7;
+margin-bottom: 5rem;
+}
+
+h2{
+font-size: 4rem;
+margin-bottom: 3rem;
+}
+
+.container{
+width: 100vw;
+height:100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+max-width: 60rem;
+margin:auto;
+padding: 2rem;
+}
+
+
+.flex-column{
+display: flex;
+flex-direction:column;
+}
+
+.justify-center{
+justify-content: center;
+}
+
+.text-center{
+text-align:center;
+}
+
+.hidden{
+display:none;
+}
+
+
+.btn{
+font-size: 2rem;
+padding: 2rem o;
+width:30rem;
+text-align: center;
+margin-bottom: 1rem;
+text-decoration: none;
+color: rgba(0, 0, 0, 0.9);
+background: linear-gradient(90deg, rgb(33, 33, 209) 0%, rgb(159, 26, 154));
+border-radius: 4px;
+}
+
+.btn:hover{
+cursor: pointer;
+box-shadow: 0 0.4rem1.4rem 0 rgb(43, 48, 178);
+transition: transform 150ms;
+transform: scale(1.03);
+}
+
+.btn[disabled]:hover{
+cursor: not-allowed;
+box-shadow: none;
+transform:none;
+}
+
+
+#highScore-btn {
+background: linear-gradient(90deg, orange 0%, rgb(255, 196, 0) 100%);
+}
+
+#highScore-btn:hover{
+box-shadow:0 0.4rem 1.4rem 0 blueviolet
+}
+
+
+
