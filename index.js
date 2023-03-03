@@ -1,9 +1,11 @@
+// import image from './img'
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
-
+const image = document.getElementById('image')
+// console.log(image)
 let currentQuestion = {}
 let acceptingAnswer = true
 let score = 0
@@ -26,7 +28,8 @@ let questions = [
     {
         question: "Guess the cartoon series.",
         // show_image('babylooney.gif', '30%', '40%', 'cartoon img')
-        // img: "babylooney.gif",
+
+        img: "./img/babylooney.gif",
           choice1 : "Bunnies and friends",
            choice2 : "Baby Looney Tunes",
            choice3 : "Baby Bunnies",
@@ -35,7 +38,7 @@ let questions = [
     },
     {
         question: "Guess the cartoon.",
-        // img: "dexter.gif",
+        img: "./img/dexter.gif",
         
         choice1: "Lab doctor",
         choice2: "Pixer the doctor",
@@ -46,7 +49,7 @@ let questions = [
     },
     {
         question: "What is this cartoon's last name.",
-        // img: "Luigi.gif",
+        img: "./img/Luigi.gif",
         choice1: "Mario",
         choice2: "Super",
         choice3: "Luigi",
@@ -58,7 +61,7 @@ let questions = [
     },
     {
         question: "Who is hiding in the image?",
-        // img: "mickey.gif",
+        img: "./img/mickey.gif",
         choice1: "Cinderella Place",
         choice2: "Disney",
         choice3: "Mouse",
@@ -69,7 +72,7 @@ let questions = [
     },
     {
         question: "What this character is waiting for?",
-        // img: "winnie.gif",
+        img: "./img/winnie.gif",
         choice1: "Winnie",
         choice2: "Pancake",
         choice3: "Honey",
@@ -77,10 +80,9 @@ let questions = [
         answer: 3
         // options: ["Winnie", "Pancake", "Honey", "Spaghetti with meat balls"]
         // correctAnswer: "Disney",
-    }, ]
+    },
+]
    
-    
-
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
@@ -89,33 +91,38 @@ startGame = () => {
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
+    // counter =10
     // show_image()
 }
 
 //getting new question
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
-        return window.location.assign('/end.html')
+        // localStorage.setItem('mostRecentScore', score)
+        // return window.location.assign('/end.html')
+        // question.innerText = currentQuestion.question
     }
-
+//tracks the progress of the questions
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
     
-    //Keeping track of the 
+    //Keeping track of the questions. Which questions we are at?
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[ questionsIndex ]
     question.innerText = currentQuestion.question
-
+    
     choices.forEach(choice => {
         const number = choice.dataset[ 'number' ]
         choice.innerText = currentQuestion[ 'choice' + number ]
     })
+    
     availableQuestions.splice(questionsIndex, 1)
-
+    // image.setAttribute('src', currentQuestion.img)
+    // video.setAttribute('src', currentQuestion.video)
+    
     acceptingAnswer = true
-    startGame()
+    // startGame()
 }
 
 choices.forEach(choice => {
@@ -146,7 +153,8 @@ choices.forEach(choice => {
             score += num
             scoreText.innerText = score
 }
-        startGame()
+startGame()
+        
         selectedChoice.parentElement.classList.add(classToApply)
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply)
@@ -166,3 +174,14 @@ choices.forEach(choice => {
         //     // This next line will just add it to the <body> tag
         //     document.body.appendChild(img);
         // }
+
+
+
+        // countdown: function(){
+        //     startGame.counter --;
+        //     $('#counter').html(startGame.counter); 
+        //     if(startGame.counter<=0){
+        //         console.log("TIME UP!")
+        //         game.timeUp();
+        //     }
+        // },

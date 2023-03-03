@@ -4,24 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/bb78294a7d.css" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style1.css">
     <script src="./index.js" defer></script>
-    <title>Document</title>
+    <title>My Project</title>
 </head>
 <body>
-    <div class="container">
-<div id="home" class ="flex-column flex-center">
-    <h1>Let's start the quiz for all</h1>
-    <a href="/game.html" class="btn">Play</a>
-    <a href="/highscores.html" id="highScore-btn" class="btn">Score</a>
+<div class="container">
+    <div id="home" class ="flex-column flex-center">
+      
+            <!-- <h1>Let's start the quiz!!</h1> -->
+        <a href="/index.html" class="btn">Play</a>
+        
+            <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div class="hud-item">
+                    <p id="progressText" class="hud-prefix">Question</p>
+                <div id="progressBar">
+                <div id="progressBarFull">
+                </div>
+            </div>
+            </div>
+            <div class="hud-item">
+                <!--  class="hud-prefix"> -->
+                <p>   
+                Score
+                </p>
+                <h1 class="hud-main-text" id="score">
+                    0
+                </h1>
+            </div>
+            
+        </div>
+  </div>
+  
+</div>
+<div>
+<!-- <img id="image"src="./img"> -->
+</div>
+<div>
+
+    <div class="choice-container">
+    <p class="choice-prefix">A</p>
+    <p class="choice-text" data-number="1"> Choice1</p>
+        </div>
+       
+    <div class="choice-container">
+    <p class="choice-prefix">B</p>
+    <p class="choice-text" data-number="2"> Choice2</p>
+    </div>
+       
+    <div class="choice-container">
+    <p class="choice-prefix">C</p>
+    <p class="choice-text" data-number="3"> Choice3</p>
+    </div>   
+    
+    <div class="choice-container">
+    <p class="choice-prefix">D</p>
+    <p class="choice-text" data-number="4"> Choice4</p>
+    </div>  
+
 
 </div>
-
-
-    </div>
-
-
-
 </body>
 </html>
