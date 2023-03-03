@@ -13,7 +13,8 @@
     h1{
     font-size: 3em;
     color: #e3d7d7;
-    margin-bottom: 1rem;
+    text-align: center;
+    /* margin-bottom: 1rem; */
     }
     
     h2{
@@ -24,7 +25,7 @@
     .container{
     width: 100vw;
     height:100vh;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     max-width: 60rem;
@@ -33,18 +34,18 @@
     }
     
     #image{
-        width: 40%;
-        height: 40%;
-        /* display: */
+        width: 30%;
+        height: 30%;
+   
         /* align-items: center; */
-          margin-left:25%;
-margin-top:-500;
+          margin-left:35%;
+        /* margin-top:-500; */
     }
     
-    .flex-column{
+    /* .flex-column{
     display: flex;
     flex-direction:column;
-    }
+    } */
     
     .justify-center{
     justify-content: center;
@@ -64,7 +65,7 @@ margin-top:-500;
     padding: 2rem o;
     width:30rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.9);
     background: linear-gradient(90deg, rgb(33, 33, 209) 0%, rgb(159, 26, 154));
@@ -154,7 +155,7 @@ margin-top:-500;
         width: 20rem;
         height: 5rem;
         border:0.2rem solid greenyellow;
-        margin-top: 5rem;
+        margin-top: 2rem;
         border-radius: 50px;
         overflow: hidden;
         }
@@ -164,9 +165,26 @@ margin-top:-500;
         background: green;
         width:0%;
         }
+
+        #playAgain{
+            font-size: 2rem;
+            padding: 1rem;
+            width:30rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            margin-left: 30%;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.9);
+            background: linear-gradient(90deg, rgb(33, 33, 209) 0%, rgb(159, 26, 154));
+            border-radius: 4px;
+
+            }
+
         /* choices container resizing */
         @media screen and (max-width: 750px) {
         .choice-container{
         min-width: 40rem;
         }
         }
+
+

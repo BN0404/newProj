@@ -8,15 +8,13 @@
     <script src="./index.js" defer></script>
     <title>My Project</title>
 </head>
-<body>
+<body>         
 <div class="container">
-    <div id="home" class ="flex-column flex-center">
+        <!-- <div id="home" class ="flex-column flex-center"> -->
       
-            <!-- <h1>Let's start the quiz!!</h1> -->
-        <a href="/index.html" class="btn">Play</a>
-        
-            <div class="container">
-        <div id="game" class="justify-center flex-column">
+                    <h1>Let's start the quiz!!</h1>
+                <a href="/index.html" class="btn">Play</a>
+        <!-- <div id="game" class="justify-center flex-column"> -->
             <div id="hud">
                 <div class="hud-item">
                     <p id="progressText" class="hud-prefix">Question</p>
@@ -26,8 +24,7 @@
             </div>
             </div>
             <div class="hud-item">
-                <!--  class="hud-prefix"> -->
-                <p>   
+                 <p class="hud-prefix">   
                 Score
                 </p>
                 <h1 class="hud-main-text" id="score">
@@ -36,14 +33,12 @@
             </div>
             
         </div>
-  </div>
-  
+ 
+<div>
+<img id="image"src="./img" alt ="Images of cartoons">
 </div>
 <div>
-<!-- <img id="image"src="./img"> -->
-</div>
-<div>
-
+    <h1 id="question"> Guess what?</h1>
     <div class="choice-container">
     <p class="choice-prefix">A</p>
     <p class="choice-text" data-number="1"> Choice1</p>
@@ -66,5 +61,6 @@
 
 
 </div>
+<div id ="playAgain"> Start </div>
 </body>
 </html>

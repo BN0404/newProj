@@ -5,6 +5,8 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 const image = document.getElementById('image')
+const start = document.querySelector('playAgain')
+
 // console.log(image)
 let currentQuestion = {}
 let acceptingAnswer = true
@@ -20,9 +22,16 @@ let availableQuestions = []
 //     }
 // }
 
-// const player = new Player( )
+// let name= prompt("Enter your Name:")
 
-// let name= promt[]
+// let age = prompt("Enter your Age: ");
+
+// let country = prompt("Enter your Country:")
+
+
+// const player = new Player(name, age, country )
+
+
 
 let questions = [
     {
@@ -81,6 +90,8 @@ let questions = [
         // options: ["Winnie", "Pancake", "Honey", "Spaghetti with meat balls"]
         // correctAnswer: "Disney",
     },
+
+
 ]
    
 const SCORE_POINTS = 100
@@ -97,11 +108,15 @@ startGame = () => {
 
 //getting new question
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        // localStorage.setItem('mostRecentScore', score)
-        // return window.location.assign('/end.html')
-        // question.innerText = currentQuestion.question
-    }
+    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS)
+        {
+            // localStorage.setItem('mostRecentScore', score)
+            // return window.location.assign('/end.html')
+
+            return
+        } 
+        
+    console.log('testing')
 //tracks the progress of the questions
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
@@ -110,7 +125,8 @@ getNewQuestion = () => {
     //Keeping track of the questions. Which questions we are at?
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[ questionsIndex ]
-    question.innerText = currentQuestion.question
+    console.log(currentQuestion);
+    question.textContent = currentQuestion.question
     
     choices.forEach(choice => {
         const number = choice.dataset[ 'number' ]
@@ -118,7 +134,7 @@ getNewQuestion = () => {
     })
     
     availableQuestions.splice(questionsIndex, 1)
-    // image.setAttribute('src', currentQuestion.img)
+    image.setAttribute('src', currentQuestion.img)
     // video.setAttribute('src', currentQuestion.video)
     
     acceptingAnswer = true
@@ -142,27 +158,36 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.add(classToApply)
         //for time 
         setTimeout(() => {
+
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
-        }, 1000)
-
-
+        }, 5000)
     })
 })
-        incrementScore = num => {
-            score += num
-            scoreText.innerText = score
+incrementScore = num => {
+    score += num
+    scoreText.innerText = score
 }
+
+if (questionCounter=== MAX_QUESTIONS && incrementScore >= 300) {
+    alert('Yay you are the winner');
+}
+else if(questionCounter === MAX_QUESTIONS && incrementScore <300) {
+    alert('Better luck next time');
+}
+
+
+
 startGame()
         
         selectedChoice.parentElement.classList.add(classToApply)
-        setTimeout(() => {
+        setInterval(() => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
-        })
+        },5000)
 
 
-   
+        
 
         // function show_image(src, width, height, alt) {
         //     var img = document.createElement("img");
