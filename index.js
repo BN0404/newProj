@@ -134,7 +134,7 @@ getNewQuestion = () => {
     })
     
     availableQuestions.splice(questionsIndex, 1)
-    image.setAttribute('src', currentQuestion.img)
+    image.setAttribute('src', "./"+ currentQuestion.img)
     // video.setAttribute('src', currentQuestion.video)
     
     acceptingAnswer = true
