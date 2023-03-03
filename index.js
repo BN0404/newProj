@@ -98,12 +98,28 @@ const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
 startGame = () => {
-    questionCounter = 0
+    // questionCounter = 0
     score = 0
     availableQuestions = [...questions]
-    getNewQuestion()
+    // getNewQuestion()
     // counter =10
     // show_image()
+   
+    // selectedChoice.parentElement.classList.add(classToApply)
+    //     setInterval(() => {
+    //         selectedChoice.parentElement.classList.remove(classToApply)
+    //         getNewQuestion()
+    //         console.log(questionCounter)
+    //         questionCounter ++
+    //         if (questionCounter === MAX_QUESTIONS && incrementScore >= 300) {
+    //             console.log("if")
+    //             alert('Yay you are the winner');
+    //         }
+    //         else if(questionCounter === MAX_QUESTIONS && incrementScore <300) {
+    //             alert('Better luck next time');
+    //         }
+            
+    //     },3000)
 }
 
 //getting new question
@@ -160,6 +176,14 @@ choices.forEach(choice => {
         setTimeout(() => {
 
             selectedChoice.parentElement.classList.remove(classToApply)
+            
+            console.log(questionCounter, MAX_QUESTIONS, score)
+            if (questionCounter=== MAX_QUESTIONS && score >= 300) {
+    alert('Yay you are the winner');
+}
+else if(questionCounter === MAX_QUESTIONS && score <300) {
+    alert('Better luck next time');
+            }
             getNewQuestion()
         }, 5000)
     })
@@ -169,22 +193,39 @@ incrementScore = num => {
     scoreText.innerText = score
 }
 
-if (questionCounter=== MAX_QUESTIONS && incrementScore >= 300) {
-    alert('Yay you are the winner');
-}
-else if(questionCounter === MAX_QUESTIONS && incrementScore <300) {
-    alert('Better luck next time');
-}
+// if (questionCounter=== MAX_QUESTIONS && incrementScore >= 300) {
+//     alert('Yay you are the winner');
+// }
+// else if(questionCounter === MAX_QUESTIONS && incrementScore <300) {
+//     alert('Better luck next time');
+// }
 
 
 
 startGame()
-        
-        selectedChoice.parentElement.classList.add(classToApply)
+// let questionCounter = 0
+
+selectedChoice.parentElement.classList.add(classToApply)
         setInterval(() => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
-        },5000)
+            console.log(questionCounter)
+            questionCounter ++
+            if (questionCounter === MAX_QUESTIONS && incrementScore >= 300) {
+                console.log("if")
+                alert('Yay you are the winner');
+            }
+            else if(questionCounter === MAX_QUESTIONS && incrementScore <300) {
+                alert('Better luck next time');
+            }
+            
+        },3000)
+        
+        // selectedChoice.parentElement.classList.add(classToApply)
+        // setInterval(() => {
+        //     selectedChoice.parentElement.classList.remove(classToApply)
+        //     getNewQuestion()
+        // },5000)
 
 
         
