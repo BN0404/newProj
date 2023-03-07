@@ -108,7 +108,7 @@ getNewQuestion = () => {
     }
 
       console.log(questionCounter)
-    if (questionCounter === MAX_QUESTIONS - 1) {
+    if (questionCounter === MAX_QUESTIONS) {
         // start.addEventListener("click", startGame) 
             startGame();
     }
