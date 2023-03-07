@@ -7,7 +7,7 @@ const progressBarFull = document.querySelector('#progressBarFull');
 const image = document.getElementById('image')
 const start = document.querySelector("#playAgain");
 
-// console.log(image)
+
 let currentQuestion = {};
 let acceptingAnswer = true;
 let score = 0;
@@ -104,7 +104,7 @@ getNewQuestion = () => {
         return;
     }
 
-    //   console.log(questionCounter)
+    
     if (questionCounter === MAX_QUESTIONS) {
         // start.addEventListener("click", startGame) 
             startGame();
@@ -119,7 +119,7 @@ getNewQuestion = () => {
   //Keeping track of the questions. Which questions we are at?
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionsIndex];
-//   console.log(currentQuestion);
+
   question.textContent = currentQuestion.question;
 
     
@@ -133,10 +133,10 @@ getNewQuestion = () => {
 
   availableQuestions.splice(questionsIndex, 1);
   image.setAttribute("src", "./" + currentQuestion.img);
-  // video.setAttribute('src', currentQuestion.video)
+  
 
   acceptingAnswer = true;
-  // startGame()
+
 };
 
 choices.forEach((choice) => {
@@ -156,7 +156,7 @@ choices.forEach((choice) => {
     selectedChoice.parentElement.classList.add(classToApply);
     //for time
     setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
+    selectedChoice.parentElement.classList.remove(classToApply);
 
     //   console.log(questionCounter, MAX_QUESTIONS, score);
       if (questionCounter === MAX_QUESTIONS && score >= 300) {
@@ -193,3 +193,7 @@ selectedChoice.parentElement.classList.add(classToApply)
             
         },3000)
         
+        start.onclick = () => {
+          // location.reload();
+          startGame()
+      }

@@ -29,6 +29,8 @@ indu.ghugtyal@gmail.com
 
 ## **Acknowledgment**
 
+### My Instructors: Abraham E. Tavarez, Colton Wright, Laura Minaya
+  
 https://www.youtube.com/watch?v=5fb2aPlgoys&t=2939s
 https://www.youtube.com/watch?v=f4fB9Xg2JEY&list=WL&index=5&t=2880s
 https://www.youtube.com/watch?v=u1HyG535JY0
